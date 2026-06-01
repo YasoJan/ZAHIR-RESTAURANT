@@ -1,0 +1,184 @@
+/******************************************************
+* Author: Yasin Zahir
+
+* ZAHIR RESTAURANT
+
+* Copyright 2026
+******************************************************/
+
+body {
+  background-color: #fef8ed;
+  box-sizing: border-box;
+  font-family: "Gotham Medium", sans-serif;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.05rem;
+}
+/*
+.content {
+}
+*/
+nav {
+  background-color: #333015;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 5rem;
+  align-items: center;
+  /* MAKE THE NAVBAR STICK */
+  top: 0;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75%;
+}
+li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #b43257;
+}
+
+li:hover {
+  text-decoration: underline;
+  color: #8a0f52;
+  cursor: pointer;
+}
+
+.order-button,
+.download-button,
+.home-button,
+.menu-button,
+.about-button {
+  background-color: #c9a66b;
+  background-color: #333015;
+  color: #fef8ed;
+  width: 10rem;
+  height: 2.5rem;
+  border-color: transparent;
+  letter-spacing: 0.05rem;
+}
+.order-button.order-button:hover,
+.download-button:hover,
+.home-button:hover,
+.menu-button:hover,
+.about-button:hover {
+  transition-duration: 0.5s;
+  color: #c9a66b;
+  background-color: #fef8ed;
+  cursor: pointer;
+  letter-spacing: 0.2rem;
+}
+.hero-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2.5%;
+  margin-top: 5.5%;
+}
+.hero-text,
+.hero-subtext,
+.section-2-text,
+.section-2-subtext,
+.kp-header,
+.s-header,
+.a-header,
+.kp-desc,
+.s-desc,
+.a-desc {
+  text-align: center;
+}
+.hero-text,
+.section-2-text,
+.kp-header,
+.s-header,
+.a-header {
+  letter-spacing: 0.1rem;
+  color: #5a4033;
+}
+.hero-subtext,
+.section-2-subtext,
+.kp-desc,
+.s-desc,
+.a-desc {
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+  color: #6e5b52;
+}
+.download-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: auto;
+  justify-self: center;
+  margin-top: 5%;
+}
+.download-button {
+  width: 12rem;
+  height: 3rem;
+}
+.download-button:hover {
+  letter-spacing: 0.075rem;
+}
+.section-2,
+.section-3,
+.section-4 {
+  margin-top: 10%;
+  width: 100%;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-2-text {
+  height: fit-content;
+  margin-top: 10%;
+}
+
+.food-frame,
+.food-frame-2,
+.food-frame-3 {
+  width: 35%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 75%;
+  border-radius: 30px;
+}
+
+.kp-img,
+.s-img,
+.a-img {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+  border-radius: 30px;
+}
+
+.kp-header,
+.s-header,
+.a-header {
+  margin-top: 5%;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.flourish {
+  color: #c9a66b;
+  text-align: center;
+}
+
+.kp-desc,
+.s-desc,
+.a-desc {
+  margin-top: 5%;
+}
