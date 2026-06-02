@@ -75,10 +75,17 @@ export class Homepage {
     kabuliPalowHeader.className = "kp-header";
     foodFrame.appendChild(kabuliPalowHeader);
 
-    const foodCardFlourish = document.createElement("p");
-    foodCardFlourish.textContent = "──── ◆ ────";
-    foodCardFlourish.className = "flourish";
-    foodFrame.appendChild(foodCardFlourish);
+    const foodCardFlourish = [
+      document.createElement("p"),
+      document.createElement("p"),
+      document.createElement("p"),
+    ];
+    for (let i = 0; i < 3; i++) {
+      foodCardFlourish[i].textContent = "──── ◆ ────";
+      foodCardFlourish[i].className = "flourish";
+    }
+
+    foodFrame.appendChild(foodCardFlourish[0]);
 
     const kabuliPalowDesc = document.createElement("p");
     kabuliPalowDesc.setAttribute("style", "white-space: pre;");
@@ -106,7 +113,7 @@ export class Homepage {
     shakshukaHeader.textContent = "Shakshuka";
     shakshukaHeader.className = "s-header";
     foodFrame2.appendChild(shakshukaHeader);
-    foodFrame2.appendChild(foodCardFlourish);
+    foodFrame2.appendChild(foodCardFlourish[1]);
 
     const shakshukaDesc = document.createElement("p");
     shakshukaDesc.setAttribute("style", "white-space: pre;");
@@ -134,7 +141,7 @@ export class Homepage {
     ashakHeader.textContent = "Ashak";
     ashakHeader.className = "a-header";
     foodFrame3.appendChild(ashakHeader);
-    foodFrame3.appendChild(foodCardFlourish);
+    foodFrame3.appendChild(foodCardFlourish[2]);
 
     const ashakDesc = document.createElement("p");
     ashakDesc.setAttribute("style", "white-space: pre;");

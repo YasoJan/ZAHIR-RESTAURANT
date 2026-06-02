@@ -7,7 +7,7 @@
 ******************************************************/
 
 import menuImage from "../assets/menu-img.png";
-
+import menuBackground from "../assets/menu-background.jpg";
 export class Menu {
   contentDiv = document.getElementById("content");
 
@@ -15,11 +15,21 @@ export class Menu {
     this.createMenu();
   }
   createMenu() {
-    //TODO: CREATE AN INNER DIV TO CENTER THE MENU IMG
+    const backgroundImg = document.createElement("img");
+    backgroundImg.className = "menu-background";
+    backgroundImg.src = menuBackground;
+
+    this.contentDiv.style.backgroundImage = `url(${menuBackground})`;
+    this.contentDiv.style.backgroundSize = "cover";
+
+    const menuFrame = document.createElement("div");
+    menuFrame.className = "menu-frame";
+    this.contentDiv.appendChild(menuFrame);
+
     const menuImg = document.createElement("img");
     menuImg.className = "menu-img";
     menuImg.src = menuImage;
 
-    this.contentDiv.appendChild(menuImg);
+    menuFrame.appendChild(menuImg);
   }
 }
