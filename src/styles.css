@@ -4,52 +4,80 @@
 * ZAHIR RESTAURANT
 
 * Copyright 2026
+
+* Responsive update
 ******************************************************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   background-color: #fef8ed;
-  box-sizing: border-box;
   font-family: "Gotham Medium", sans-serif;
   padding: 0;
   margin: 0;
   letter-spacing: 0.05rem;
+  overflow-x: hidden; /* safety net against accidental horizontal scroll */
 }
-/*
-.content {
+
+img {
+  max-width: 100%;
 }
-*/
+
+/* Clear the fixed navbar so content never hides underneath it */
+#content {
+  width: 100%;
+  padding-top: 5rem;
+}
+
 nav {
   background-color: #333015;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 5rem;
-  align-items: center;
   /* MAKE THE NAVBAR STICK */
   top: 0;
   z-index: 100;
   position: fixed;
-  width: 100%;
-}
-ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 75%;
-}
-li {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  color: #b43257;
 }
 
-li:hover {
-  text-decoration: underline;
-  color: #8a0f52;
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Hamburger toggle — hidden on large screens, shown on mobile */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  background: transparent;
   cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #fef8ed;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .order-button,
@@ -57,15 +85,16 @@ li:hover {
 .home-button,
 .menu-button,
 .about-button {
-  background-color: #c9a66b;
   background-color: #333015;
   color: #fef8ed;
   width: 10rem;
   height: 2.5rem;
   border-color: transparent;
   letter-spacing: 0.05rem;
+  font-family: inherit;
 }
-.order-button.order-button:hover,
+
+.order-button:hover,
 .download-button:hover,
 .home-button:hover,
 .menu-button:hover,
@@ -76,12 +105,16 @@ li:hover {
   cursor: pointer;
   letter-spacing: 0.2rem;
 }
+
+/* ---------- Homepage ---------- */
+
 .hero-img {
+  display: block;
   width: 100%;
   height: auto;
   margin-bottom: 2.5%;
-  margin-top: 5.5%;
 }
+
 .hero-text,
 .hero-subtext,
 .section-2-text,
@@ -96,6 +129,7 @@ li:hover {
 .a-desc {
   text-align: center;
 }
+
 .hero-text,
 .section-2-text,
 .kp-header,
@@ -105,6 +139,12 @@ li:hover {
   letter-spacing: 0.1rem;
   color: #5a4033;
 }
+
+.hero-text {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  padding: 0 1rem;
+}
+
 .hero-subtext,
 .section-2-subtext,
 .about-subtext,
@@ -114,29 +154,39 @@ li:hover {
   line-height: 1.5;
   letter-spacing: 0.1rem;
   color: #6e5b52;
+  white-space: pre-line; /* keep intended line breaks but allow wrapping */
 }
+
+.hero-subtext {
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+}
+
 .download-button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
-  height: auto;
-  justify-self: center;
+  width: 100%;
   margin-top: 5%;
 }
+
 .download-button {
   width: 12rem;
   height: 3rem;
 }
+
 .download-button:hover {
   letter-spacing: 0.075rem;
 }
+
 .section-2,
 .section-3,
 .section-4 {
-  margin-top: 10%;
+  margin-top: 8%;
   width: 100%;
-  height: 50rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,18 +195,26 @@ li:hover {
 .section-2-text {
   height: fit-content;
   margin-top: 10%;
+  padding: 0 1rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.section-2-subtext {
+  padding: 0 1rem;
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
 }
 
 .food-frame,
 .food-frame-2,
 .food-frame-3 {
-  width: 35%;
-  box-shadow: 0 8px 24px #333015;
+  width: min(35%, 25rem);
   display: flex;
   flex-direction: column;
-  height: 75%;
   border-radius: 30px;
   background-color: #333015;
+  box-shadow: 0 8px 24px #333015;
+  padding-bottom: 1.5rem;
+  overflow: hidden;
 }
 
 .food-frame:hover,
@@ -167,13 +225,13 @@ li:hover {
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
+
 .kp-img,
 .s-img,
 .a-img {
-  display: flex;
+  display: block;
   width: 100%;
-  height: fit-content;
-  justify-content: center;
+  height: auto;
   border-radius: 30px;
 }
 
@@ -195,44 +253,51 @@ li:hover {
 .s-desc,
 .a-desc {
   margin-top: 5%;
+  padding: 0 1rem;
   color: #c9a66b;
 }
-/* Menu Page */
+
+/* ---------- Menu Page ---------- */
 
 .menu-frame {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100rem;
+  min-height: calc(100vh - 5rem);
+  padding: 2rem 1rem;
 }
 
 .menu-img {
-  height: 75%;
+  width: auto;
+  max-width: 90%;
+  height: auto;
+  max-height: 85vh;
   border-radius: 30px;
 }
 
-/* About Page */
+/* ---------- About Page ---------- */
+
 .main-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  border: 2px solid;
+  justify-content: center;
+  gap: 3rem;
   width: 100%;
-  height: 100rem;
+  padding: 4rem 1rem;
 }
 
 .intro-card,
 .our-story-card {
   display: flex;
-  width: 50%;
-  height: 25%;
+  width: min(50%, 40rem);
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 8px 24px #333015;
   border-radius: 30px;
   background-color: #333015;
+  box-shadow: 0 8px 24px #333015;
+  padding: 2.5rem 1.5rem;
 }
 
 .intro-card:hover,
@@ -251,24 +316,125 @@ li:hover {
   color: #c9a66b;
 }
 
+.about-text {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+}
+
 .our-story-card {
-  width: 75%;
+  width: min(75%, 55rem);
   color: #fef8ed;
 }
 
-/* Footer */
+.our-story-text {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* ---------- Footer ---------- */
 
 #footer {
-  height: 15vh;
+  min-height: 15vh;
   width: 100%;
   background-color: #333015;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 
 footer {
   color: #fef8ed;
   letter-spacing: 0.05rem;
   text-align: center;
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .food-frame,
+  .food-frame-2,
+  .food-frame-3 {
+    width: min(60%, 30rem);
+  }
+  .intro-card {
+    width: min(70%, 40rem);
+  }
+  .our-story-card {
+    width: min(85%, 45rem);
+  }
+}
+
+/* Mobile — collapse nav into a hamburger menu */
+@media (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+    padding: 0 1.25rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #333015;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  nav.nav-open .nav-list {
+    max-height: 18rem;
+  }
+
+  .nav-list button {
+    width: 100%;
+    height: 3.25rem;
+    border-bottom: 1px solid rgba(254, 248, 237, 0.12);
+  }
+
+  /* Animate the hamburger into an X when open */
+  nav.nav-open .nav-toggle-bar:nth-child(1) {
+    transform: translateY(0.6rem) rotate(45deg);
+  }
+  nav.nav-open .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  nav.nav-open .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-0.6rem) rotate(-45deg);
+  }
+
+  .section-2,
+  .section-3,
+  .section-4 {
+    margin-top: 12%;
+  }
+
+  .food-frame,
+  .food-frame-2,
+  .food-frame-3 {
+    width: 88%;
+  }
+
+  .intro-card,
+  .our-story-card {
+    width: 90%;
+  }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .food-frame,
+  .food-frame-2,
+  .food-frame-3 {
+    width: 92%;
+  }
 }

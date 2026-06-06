@@ -38,7 +38,6 @@ export class About {
     introCard.appendChild(aboutCardFlourish[0]);
 
     const aboutSubText = document.createElement("p");
-    aboutSubText.setAttribute("style", "white-space: pre;");
     aboutSubText.textContent =
       "Serving authentic Afghan cuisine\r\n since 1998.";
     aboutSubText.className = "about-subtext";
@@ -55,7 +54,6 @@ export class About {
     ourStoryCard.appendChild(aboutCardFlourish[1]);
 
     const ourStorySubText = document.createElement("p");
-    ourStorySubText.setAttribute("style", "white-space: pre;");
     ourStorySubText.textContent =
       "At Zahir Restaurant, we believe great food brings people together.\r\n\r\n Inspired by Afghan traditions, our chefs prepare\r\n every dish using fresh ingredients and time-honored recipes.\r\n\r\n Whether you're joining us for a family celebration,\r\n a casual dinner, or a special occasion, our goal is to create\r\n an experience you'll never forget.";
     ourStorySubText.className = "about-subtext";

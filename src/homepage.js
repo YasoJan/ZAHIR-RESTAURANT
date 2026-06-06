@@ -29,7 +29,6 @@ export class Homepage {
     this.contentDiv.appendChild(heroText);
 
     const heroSubText = document.createElement("p");
-    heroSubText.setAttribute("style", "white-space: pre;");
     heroSubText.textContent =
       "The ZAHIR RESTAURANT Site is here! Let's celebrate! It is now easier than ever to book reservations, order online, and keep track of your rewards - all in \r\n one convenient place.";
     heroSubText.className = "hero-subtext";
@@ -88,7 +87,6 @@ export class Homepage {
     foodFrame.appendChild(foodCardFlourish[0]);
 
     const kabuliPalowDesc = document.createElement("p");
-    kabuliPalowDesc.setAttribute("style", "white-space: pre;");
     kabuliPalowDesc.textContent =
       "Afghanistan's national dish made with\r\n fragrant rice, tender lamb,\r\n carrots, raisins and nuts.";
     kabuliPalowDesc.className = "kp-desc";
@@ -116,7 +114,6 @@ export class Homepage {
     foodFrame2.appendChild(foodCardFlourish[1]);
 
     const shakshukaDesc = document.createElement("p");
-    shakshukaDesc.setAttribute("style", "white-space: pre;");
     shakshukaDesc.textContent =
       "Poached eggs in a rich, spiced tomato\r\n sauce with peppers, onions and herbs.\r\n A hearty and flavorful classic.";
     shakshukaDesc.className = "s-desc";
@@ -144,7 +141,6 @@ export class Homepage {
     foodFrame3.appendChild(foodCardFlourish[2]);
 
     const ashakDesc = document.createElement("p");
-    ashakDesc.setAttribute("style", "white-space: pre;");
     ashakDesc.textContent =
       "Delicate leek-filled dumplings topped\r\n with garlic yogurt sauce, lentils,\r\n and a touch of mint.";
     ashakDesc.className = "a-desc";

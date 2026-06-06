@@ -9,6 +9,7 @@ class Main {
 
   constructor() {
     this.globalListeners();
+    this.navToggleListener();
   }
   removeContent() {
     while (this.contentDiv.firstChild) {
@@ -17,6 +18,25 @@ class Main {
     if (this.contentDiv.style.backgroundImage) {
       this.contentDiv.style.backgroundImage = "";
     }
+  }
+
+  // Mobile hamburger menu: open/close the nav and close it after a selection
+  navToggleListener() {
+    const nav = document.querySelector("nav");
+    const navToggle = document.querySelector(".nav-toggle");
+    const navList = document.querySelector(".nav-list");
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("nav-open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navList.addEventListener("click", (event) => {
+      if (event.target.tagName === "BUTTON") {
+        nav.classList.remove("nav-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
   }
 
   globalListeners() {
